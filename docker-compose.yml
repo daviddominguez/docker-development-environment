@@ -2,10 +2,22 @@
 # TODO Install Docker
 # TODO Install Docker Compose
 # TODO create container directories 
-# sudo mkdir -vp /srv/container/{consul,fluentd,rabbitmq,mongo,elasticsearch,redis,cassandra}
+# sudo mkdir -vp /srv/container/{consul,fluentd,rabbitmq,mongo,elasticsearch,redis,cassandra,mysql}
 # docker-compose up -d [service_name]
 # docker-compose stop [service_name]
 #
+mysql:
+  image: mysql:latest
+  volumes:
+    - /srv/container/mysql:/var/lib/mysql
+  ports:
+    - "3306:3306"
+  environment:
+    - "MYSQL_ROOT_PASSWORD=root"
+    - "MYSQL_USER=user"
+    - "MYSQL_PASSWORD=user"
+    - "MYSQL_DATABASE=db"
+
 consul:
   image: progrium/consul
   hostname: consul
