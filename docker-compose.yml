@@ -18,6 +18,18 @@ mysql:
     - "MYSQL_PASSWORD=user"
     - "MYSQL_DATABASE=db"
 
+# connect using postgres as db, user and password
+# https://hub.docker.com/_/postgres/
+postgresql:
+  restart: always
+  image: postgres:9.6
+  volumes:
+    - /srv/container/postgresql:/var/lib/postgresql
+  ports:
+    - 5432:5432
+  environment:
+    - "POSTGRES_PASSWORD=postgres"
+
 consul:
   image: progrium/consul
   hostname: consul
