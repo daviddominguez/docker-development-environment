@@ -2,7 +2,7 @@
 # TODO Install Docker
 # TODO Install Docker Compose
 # TODO create container directories 
-# sudo mkdir -vp /srv/container/{consul,fluentd,rabbitmq,mongo,elasticsearch,redis,cassandra,mysql}
+# sudo mkdir -vp /srv/container/{consul,fluentd,rabbitmq,mongo,elasticsearch,redis,cassandra,mysql,postgresql}
 # docker-compose up -d [service_name]
 # docker-compose stop [service_name]
 #
